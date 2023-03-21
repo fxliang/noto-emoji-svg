@@ -21,6 +21,11 @@ jobs:
       run: |
         rm svg/u0023.svg svg/u002a.svg 
         rm svg/u003*.svg
+        cd svg/
+        for i in $(ls u003*_20e3.svg); do
+          cp $i $(echo $si | sed -E 's/(u003\d_)(20e3.svg)/\1fe0f_\2/g')
+          done
+        cd ..
         
     - name: Build Font
       run: |
