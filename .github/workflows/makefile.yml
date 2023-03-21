@@ -19,8 +19,8 @@ jobs:
 
     - name: Build Font
       run: |
-        python3 make_bw_font.py -o fonts -r x.xxx --gsub GSUB.fea --gpos GPOS.fea --uvs UVS.txt svg_bw flags_bw
-        python3 make_svg_font.py -z -r x.xxx svg flags fonts/NotoEmoji.otf -v
+        python3 make_bw_font.py -o fonts -r 2.101 --gsub GSUB.fea --gpos GPOS.fea --uvs UVS.txt svg_bw flags_bw
+        python3 make_svg_font.py -z -r 2.101 svg flags fonts/NotoEmoji.otf -v
         
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
