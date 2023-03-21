@@ -16,7 +16,12 @@ jobs:
 
     - name: Install dependencies
       run: pip install FontTools AFDKO
-
+      
+    - name: remove numbers and #*
+      run: |
+        rm svg/u0023.svg svg/u002a.svg 
+        rm svg/u003*.svg
+        
     - name: Build Font
       run: |
         python3 make_bw_font.py -o fonts -r 2.101 --gsub GSUB.fea --gpos GPOS.fea --uvs UVS.txt svg_bw flags_bw
